@@ -51,7 +51,7 @@ export default function App() {
 
         await MediaLibrary.saveToLibraryAsync(localUri);
         if (localUri) {
-          alert("Saved!");
+          alert("已保存!");
         }
       } catch (e) {
         console.log(e);
@@ -77,7 +77,7 @@ export default function App() {
 
   const pickImageAsync = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      allowsEditing: true,
+      allowsEditing: false,
       quality: 1,
     });
 
@@ -86,7 +86,7 @@ export default function App() {
       setSelectedImage(result.assets[0].uri);
       setShowAppOptions(true)
     } else {
-      alert('You did not select any image.');
+      alert('请选择图片');
     }
   };
 
